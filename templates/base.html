@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="static/onion.png">
+        <script src="static/app.js"></script>
+        <title>Малинка - {{ title }}</title>
+    </head>
+    <body>
+        <div class="left-bar">
+            <a class="{% if tab_number == 0 %}button_selected{% else %}button{% endif %}" href="/">Видео</a>
+            <a class="{% if tab_number == 1 %}button_selected{% else %}button{% endif %}" href="i">Посмотреть фото</a>
+            <a class="{% if tab_number == 2 %}button_selected{% else %}button{% endif %}" href="l">Параметры камеры</a>
+
+            {% if tab_number == 1 %}
+            <div class="tab-content">
+                <p>Настройки просмотра</p>
+                <label for="n_images">Количество:</label>
+                <input class="slider" type="range" id="n_images" name="n_images"  min="2" max="100" value="100" step="2" oninput="set_img_count()">
+                <label for="n_images">Размер:</label>
+                <input class="slider" type="range" id="img_size" name="img_size"  min="8" max="80" value="15" step="2" oninput="set_img_size()">
+            </div>
+            {% endif %}
+
+            {% if tab_number == 2 %}
+            <label for="storage">Емкость хранилища:</label><br>
+            <label for="storage">Свободно {{ free_memory }} из {{ total_memory }} ГиБ</label>
+            <input disabled class="slider" name="storage" type="range" min="0" max="{{total_memory}}" value="{{ total_memory - free_memory }}">
+            
+            <p></p>
+            {% endif %}
+
+            <a class="button" download href="static/data/video.webm">Скачать видо</a>
+            <a class="button" download href="static/data/images.zip">Скачать архив фото</a>
+
+
+        </div>
+
+        <div class="main-content" >
+            {% block content %}{% endblock content %}
+        </div>
+    </body>
+</html>
+

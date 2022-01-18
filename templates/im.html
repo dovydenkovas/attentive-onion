@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+             <div class="tab-content" id="tab2">
+                <h1>Фотографии</h1>
+
+                <div class="images">
+                    {% for image in images %}
+                    <img class="image" src="static/data/imgs/{{ image }}">
+                    {% endfor %}
+                </div>
+            </div>
+{% endblock content %}

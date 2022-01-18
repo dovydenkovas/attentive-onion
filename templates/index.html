@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="tab-content" id="tab1">
+                <h1>Камера @ Малинка</h1>
+                <video  controls="controls">
+                    <source src="static/data/video.webm" type='video/webm'  >
+                    Тут должно быть видео, но оно не поддерживается вашим браузером :(
+                </video>
+                <h2>Последний кадр: {{ last_frame }}</h2>
+        </div>
+
+{% endblock content %}

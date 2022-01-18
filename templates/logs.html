@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Параметры</h1>
+    <p>Время между фотками в минутах: {{ settings.delay_between_frames }}<br>
+    Коэффициент тьмы: {{ settings.light_level }}<br>
+    Период сборки, кол-во кадров: {{ settings.buffer_size }}</p>
+    <p>Версия программного обеспечения: {{ version }} </p>
+    <p class="intline_btn"><a class="button" href="static/data/logs.log">Скачать логи</a></p>
+    
+
+{% endblock content %}
