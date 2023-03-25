@@ -1,5 +1,5 @@
-# RaspberriPiSite
-RaspberryPiSite
+# Attentive onion
+Веб сервис для автоматической съемки роста растений. Делает фотографии через определенные промежутки времени и склеивает их в видео. 
 
 ## Instalation
 ```commandline
